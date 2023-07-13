@@ -10,7 +10,7 @@ import SwiftUI
 struct Variable3: View {
     
     let name = "Hyun"
-    var age = 21
+    let age = 21
     var anyNumber = 5
     var anyNumber2 = 8
     var anyNumber3 = 7

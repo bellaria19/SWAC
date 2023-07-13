@@ -22,6 +22,7 @@ struct Loop: View {
             ForEach(0 ..< 3) { number in
                 Text(farmAnimals[number])
             }
+            
         }
     }
 }

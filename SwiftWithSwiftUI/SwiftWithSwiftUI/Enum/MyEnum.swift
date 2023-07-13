@@ -26,6 +26,7 @@ struct MyEnum: View {
         //default:
         //    Text("이것은 못만들어요")
         }
+        
     }
     
 //    @State var menu: Menu = .pork

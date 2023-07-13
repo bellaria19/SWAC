@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3A0283D2A5E842700615A84 /* AccessControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0283C2A5E842700615A84 /* AccessControlView.swift */; };
+		F3A0283F2A5E904400615A84 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0283E2A5E904400615A84 /* ErrorHandling.swift */; };
 		F3AB36DC2A57D3D2008061F5 /* MyOptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */; };
 		F3AB36DE2A57D638008061F5 /* MyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB36DD2A57D638008061F5 /* MyProperty.swift */; };
 		F3AB36E02A57D9C2008061F5 /* MyMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB36DF2A57D9C2008061F5 /* MyMethod.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F3A0283C2A5E842700615A84 /* AccessControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlView.swift; sourceTree = "<group>"; };
+		F3A0283E2A5E904400615A84 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOptionalChaining.swift; sourceTree = "<group>"; };
 		F3AB36DD2A57D638008061F5 /* MyProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProperty.swift; sourceTree = "<group>"; };
 		F3AB36DF2A57D9C2008061F5 /* MyMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMethod.swift; sourceTree = "<group>"; };
@@ -181,8 +185,9 @@
 				F3B8164D2A5654B300EE3770 /* ContentView.swift */,
 				F3B8164F2A5654B400EE3770 /* Assets.xcassets */,
 				F3B816512A5654B400EE3770 /* Preview Content */,
-				F3AB36DF2A57D9C2008061F5 /* MyMethod.swift */,
 				F3B7F63D2A5BED59004B93A8 /* CheckPoint3.swift */,
+				F3A0283C2A5E842700615A84 /* AccessControlView.swift */,
+				F3A0283E2A5E904400615A84 /* ErrorHandling.swift */,
 			);
 			path = SwiftWithSwiftUI;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 		F3B8168F2A567E7800EE3770 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				F3AB36DF2A57D9C2008061F5 /* MyMethod.swift */,
 				F3B8168D2A567C5400EE3770 /* MyFunction.swift */,
 			);
 			path = Function;
@@ -431,6 +437,7 @@
 				F3AB36E02A57D9C2008061F5 /* MyMethod.swift in Sources */,
 				F3B7F6382A5BE7B6004B93A8 /* MyProtocol.swift in Sources */,
 				F3B8164E2A5654B300EE3770 /* ContentView.swift in Sources */,
+				F3A0283D2A5E842700615A84 /* AccessControlView.swift in Sources */,
 				F3B816D52A56A70500EE3770 /* MyOptionalBinding.swift in Sources */,
 				F3B8168E2A567C5400EE3770 /* MyFunction.swift in Sources */,
 				F3AB36DE2A57D638008061F5 /* MyProperty.swift in Sources */,
@@ -449,6 +456,7 @@
 				F3B8164C2A5654B300EE3770 /* SwiftWithSwiftUIApp.swift in Sources */,
 				F3B8168C2A56674500EE3770 /* Loop.swift in Sources */,
 				F3B7F63B2A5BEAFA004B93A8 /* MyConcurrency.swift in Sources */,
+				F3A0283F2A5E904400615A84 /* ErrorHandling.swift in Sources */,
 				F3AB36E42A57E141008061F5 /* CheckPoint.swift in Sources */,
 				F3B7F6342A5BE1CD004B93A8 /* MyExtension.swift in Sources */,
 			);

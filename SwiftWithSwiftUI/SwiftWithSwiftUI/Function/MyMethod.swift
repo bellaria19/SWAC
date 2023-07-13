@@ -12,7 +12,7 @@ func returnName() -> String {
 }
 
 
-// 메소드 <- enum, struc, class 안에서 되는 함수
+// 메소드 <- enum, struct, class 안에서 되는 함수
 
 struct MyMethod: View {
     var body: some View {
