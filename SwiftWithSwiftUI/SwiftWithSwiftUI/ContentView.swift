@@ -9,19 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "heart")
-            Text("Hello CNU")
-        
-            Button("Touch") {
-            
-            }
-            
-            Button("Touch2") {
-                
-            }
-            
-        }
+        Deinit()
     }
 }
 

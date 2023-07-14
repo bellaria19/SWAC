@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F33A31C42A5FD4F200B61324 /* Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A31C32A5FD4F200B61324 /* Initializer.swift */; };
+		F33A31C72A5FD9AD00B61324 /* Deinit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A31C62A5FD9AD00B61324 /* Deinit.swift */; };
+		F33A31C92A5FECA100B61324 /* Escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A31C82A5FECA100B61324 /* Escaping.swift */; };
+		F33A31CB2A5FF05C00B61324 /* ProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A31CA2A5FF05C00B61324 /* ProtocolExt.swift */; };
+		F33A31CD2A5FF84D00B61324 /* TypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A31CC2A5FF84D00B61324 /* TypeCasting.swift */; };
+		F33A31CF2A5FFB4A00B61324 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33A31CE2A5FFB4A00B61324 /* Generic.swift */; };
 		F3A0283D2A5E842700615A84 /* AccessControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0283C2A5E842700615A84 /* AccessControlView.swift */; };
 		F3A0283F2A5E904400615A84 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0283E2A5E904400615A84 /* ErrorHandling.swift */; };
 		F3AB36DC2A57D3D2008061F5 /* MyOptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */; };
@@ -64,6 +70,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F33A31C32A5FD4F200B61324 /* Initializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializer.swift; sourceTree = "<group>"; };
+		F33A31C62A5FD9AD00B61324 /* Deinit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deinit.swift; sourceTree = "<group>"; };
+		F33A31C82A5FECA100B61324 /* Escaping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Escaping.swift; sourceTree = "<group>"; };
+		F33A31CA2A5FF05C00B61324 /* ProtocolExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolExt.swift; sourceTree = "<group>"; };
+		F33A31CC2A5FF84D00B61324 /* TypeCasting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCasting.swift; sourceTree = "<group>"; };
+		F33A31CE2A5FFB4A00B61324 /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
 		F3A0283C2A5E842700615A84 /* AccessControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlView.swift; sourceTree = "<group>"; };
 		F3A0283E2A5E904400615A84 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOptionalChaining.swift; sourceTree = "<group>"; };
@@ -131,6 +143,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F33A31C52A5FD98200B61324 /* Level4 */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0283C2A5E842700615A84 /* AccessControlView.swift */,
+				F3A0283E2A5E904400615A84 /* ErrorHandling.swift */,
+				F33A31C32A5FD4F200B61324 /* Initializer.swift */,
+				F33A31C62A5FD9AD00B61324 /* Deinit.swift */,
+				F33A31C82A5FECA100B61324 /* Escaping.swift */,
+				F33A31CA2A5FF05C00B61324 /* ProtocolExt.swift */,
+				F33A31CC2A5FF84D00B61324 /* TypeCasting.swift */,
+			);
+			name = Level4;
+			sourceTree = "<group>";
+		};
 		F3B7F6392A5BEAD4004B93A8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +197,7 @@
 		F3B8164A2A5654B300EE3770 /* SwiftWithSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F33A31C52A5FD98200B61324 /* Level4 */,
 				F3B7F63C2A5BED3F004B93A8 /* Utilities */,
 				F3B7F6392A5BEAD4004B93A8 /* Protocols */,
 				F3B816D12A569E8900EE3770 /* Object */,
@@ -186,8 +213,7 @@
 				F3B8164F2A5654B400EE3770 /* Assets.xcassets */,
 				F3B816512A5654B400EE3770 /* Preview Content */,
 				F3B7F63D2A5BED59004B93A8 /* CheckPoint3.swift */,
-				F3A0283C2A5E842700615A84 /* AccessControlView.swift */,
-				F3A0283E2A5E904400615A84 /* ErrorHandling.swift */,
+				F33A31CE2A5FFB4A00B61324 /* Generic.swift */,
 			);
 			path = SwiftWithSwiftUI;
 			sourceTree = "<group>";
@@ -432,13 +458,17 @@
 				F3B7F6302A5BD883004B93A8 /* MyHOF.swift in Sources */,
 				F3B7F63E2A5BED59004B93A8 /* CheckPoint3.swift in Sources */,
 				F3B816D02A569A2900EE3770 /* MyStruct.swift in Sources */,
+				F33A31CD2A5FF84D00B61324 /* TypeCasting.swift in Sources */,
 				F3B8167C2A56622400EE3770 /* Variable4.swift in Sources */,
 				F3B816D72A56A89D00EE3770 /* MyClass.swift in Sources */,
 				F3AB36E02A57D9C2008061F5 /* MyMethod.swift in Sources */,
 				F3B7F6382A5BE7B6004B93A8 /* MyProtocol.swift in Sources */,
 				F3B8164E2A5654B300EE3770 /* ContentView.swift in Sources */,
 				F3A0283D2A5E842700615A84 /* AccessControlView.swift in Sources */,
+				F33A31C42A5FD4F200B61324 /* Initializer.swift in Sources */,
+				F33A31C72A5FD9AD00B61324 /* Deinit.swift in Sources */,
 				F3B816D52A56A70500EE3770 /* MyOptionalBinding.swift in Sources */,
+				F33A31C92A5FECA100B61324 /* Escaping.swift in Sources */,
 				F3B8168E2A567C5400EE3770 /* MyFunction.swift in Sources */,
 				F3AB36DE2A57D638008061F5 /* MyProperty.swift in Sources */,
 				F3B7F62E2A5BC060004B93A8 /* MyClosure4.swift in Sources */,
@@ -448,9 +478,11 @@
 				F3B7F62A2A5BB52B004B93A8 /* MyClosure2.swift in Sources */,
 				F3B7F62C2A5BB7DE004B93A8 /* MyClosure3.swift in Sources */,
 				F3B816912A567E9100EE3770 /* MyEnum.swift in Sources */,
+				F33A31CF2A5FFB4A00B61324 /* Generic.swift in Sources */,
 				F3AB36E22A57DC7F008061F5 /* MyEnumAfter.swift in Sources */,
 				F3B816762A5656DA00EE3770 /* Variable.swift in Sources */,
 				F3B816782A56578D00EE3770 /* Variable2.swift in Sources */,
+				F33A31CB2A5FF05C00B61324 /* ProtocolExt.swift in Sources */,
 				F3B8167A2A565FC500EE3770 /* Variable3.swift in Sources */,
 				F3B7F6362A5BE57E004B93A8 /* MyDataModeling.swift in Sources */,
 				F3B8164C2A5654B300EE3770 /* SwiftWithSwiftUIApp.swift in Sources */,
