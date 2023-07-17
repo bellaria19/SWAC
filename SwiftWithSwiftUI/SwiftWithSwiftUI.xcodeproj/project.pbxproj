@@ -190,44 +190,67 @@
 			name = Closure;
 			sourceTree = "<group>";
 		};
-		08CE97722A653C1D00188F5F /* Option */ = {
+		08CE97772A654A4400188F5F /* Function */ = {
 			isa = PBXGroup;
 			children = (
-				F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */,
-				F3B816D42A56A70500EE3770 /* MyOptionalBinding.swift */,
-				F3B816C82A568BFD00EE3770 /* MyOptional.swift */,
+				F3B8168D2A567C5400EE3770 /* MyFunction.swift */,
+				F3AB36DF2A57D9C2008061F5 /* MyMethod.swift */,
 			);
-			path = Option;
+			name = Function;
 			sourceTree = "<group>";
 		};
-		08CE97742A653C7A00188F5F /* Loop */ = {
+		08CE977A2A654A9C00188F5F /* Option */ = {
 			isa = PBXGroup;
 			children = (
-				F3B7F6312A5BDDA4004B93A8 /* MyHOFLoop.swift */,
-				F3B7F62F2A5BD883004B93A8 /* MyHOF.swift */,
-				F3B8168B2A56674500EE3770 /* Loop.swift */,
 			);
-			path = Loop;
+			name = Option;
 			sourceTree = "<group>";
 		};
-		08CE97752A653C9700188F5F /* If */ = {
+		08CE977D2A654BC300188F5F /* If */ = {
 			isa = PBXGroup;
 			children = (
 				F3B816802A56655100EE3770 /* Condition.swift */,
 			);
-			path = If;
+			name = If;
 			sourceTree = "<group>";
 		};
-		08CE97762A653CC100188F5F /* Variable */ = {
+		08CE977E2A654C3B00188F5F /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		08CE977F2A654C7D00188F5F /* Loop */ = {
+			isa = PBXGroup;
+			children = (
+				F3B8168B2A56674500EE3770 /* Loop.swift */,
+				F3B7F62F2A5BD883004B93A8 /* MyHOF.swift */,
+				F3B7F6312A5BDDA4004B93A8 /* MyHOFLoop.swift */,
+			);
+			name = Loop;
+			sourceTree = "<group>";
+		};
+		08CE97802A654C8D00188F5F /* Variable */ = {
 			isa = PBXGroup;
 			children = (
 				F3AB36DD2A57D638008061F5 /* MyProperty.swift */,
 				F3B8167B2A56622400EE3770 /* Variable4.swift */,
 				F3B816792A565FC500EE3770 /* Variable3.swift */,
-				F3B816772A56578D00EE3770 /* Variable2.swift */,
 				F3B816752A5656DA00EE3770 /* Variable.swift */,
+				F3B816772A56578D00EE3770 /* Variable2.swift */,
 			);
-			path = Variable;
+			name = Variable;
+			sourceTree = "<group>";
+		};
+		08CE97812A654CB400188F5F /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				F3B816C82A568BFD00EE3770 /* MyOptional.swift */,
+				F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */,
+				F3B816D42A56A70500EE3770 /* MyOptionalBinding.swift */,
+			);
+			name = Option;
 			sourceTree = "<group>";
 		};
 		F33A31C52A5FD98200B61324 /* Level4 */ = {
@@ -268,11 +291,13 @@
 		F3B8164A2A5654B300EE3770 /* SwiftWithSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				08CE97762A653CC100188F5F /* Variable */,
-				08CE97752A653C9700188F5F /* If */,
-				08CE97742A653C7A00188F5F /* Loop */,
-				08CE97722A653C1D00188F5F /* Option */,
-				F3B8168F2A567E7800EE3770 /* Function */,
+				08CE97812A654CB400188F5F /* Option */,
+				08CE97802A654C8D00188F5F /* Variable */,
+				08CE977F2A654C7D00188F5F /* Loop */,
+				08CE977E2A654C3B00188F5F /* New Group1 */,
+				08CE977D2A654BC300188F5F /* If */,
+				08CE977A2A654A9C00188F5F /* Option */,
+				08CE97772A654A4400188F5F /* Function */,
 				08CE97702A653BD000188F5F /* Closure */,
 				08CE976F2A653B9E00188F5F /* Enum */,
 				08CE976E2A653B8200188F5F /* Object */,
@@ -312,15 +337,6 @@
 				F3B816682A5654B400EE3770 /* SwiftWithSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = SwiftWithSwiftUIUITests;
-			sourceTree = "<group>";
-		};
-		F3B8168F2A567E7800EE3770 /* Function */ = {
-			isa = PBXGroup;
-			children = (
-				F3AB36DF2A57D9C2008061F5 /* MyMethod.swift */,
-				F3B8168D2A567C5400EE3770 /* MyFunction.swift */,
-			);
-			path = Function;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
