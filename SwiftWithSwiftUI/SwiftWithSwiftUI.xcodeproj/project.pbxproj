@@ -143,9 +143,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08CE976C2A653B4000188F5F /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F3B7F6332A5BE1CD004B93A8 /* MyExtension.swift */,
+			);
+			name = utilities;
+			sourceTree = "<group>";
+		};
+		08CE976D2A653B6600188F5F /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3B7F6352A5BE57E004B93A8 /* MyDataModeling.swift */,
+				F3B7F6372A5BE7B6004B93A8 /* MyProtocol.swift */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
+		08CE976E2A653B8200188F5F /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				F3B816D62A56A89D00EE3770 /* MyClass.swift */,
+				F3B816CF2A569A2900EE3770 /* MyStruct.swift */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		08CE976F2A653B9E00188F5F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F3B816902A567E9100EE3770 /* MyEnum.swift */,
+				F3AB36E12A57DC7F008061F5 /* MyEnumAfter.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
+		08CE97702A653BD000188F5F /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				F3B7F63A2A5BEAFA004B93A8 /* MyConcurrency.swift */,
+				F3B7F62D2A5BC060004B93A8 /* MyClosure4.swift */,
+				F3B7F62B2A5BB7DE004B93A8 /* MyClosure3.swift */,
+				F3B7F6292A5BB52B004B93A8 /* MyClosure2.swift */,
+				F3B816CB2A568E5700EE3770 /* MyClosure.swift */,
+			);
+			name = Closure;
+			sourceTree = "<group>";
+		};
+		08CE97722A653C1D00188F5F /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */,
+				F3B816D42A56A70500EE3770 /* MyOptionalBinding.swift */,
+				F3B816C82A568BFD00EE3770 /* MyOptional.swift */,
+			);
+			path = Option;
+			sourceTree = "<group>";
+		};
+		08CE97742A653C7A00188F5F /* Loop */ = {
+			isa = PBXGroup;
+			children = (
+				F3B7F6312A5BDDA4004B93A8 /* MyHOFLoop.swift */,
+				F3B7F62F2A5BD883004B93A8 /* MyHOF.swift */,
+				F3B8168B2A56674500EE3770 /* Loop.swift */,
+			);
+			path = Loop;
+			sourceTree = "<group>";
+		};
+		08CE97752A653C9700188F5F /* If */ = {
+			isa = PBXGroup;
+			children = (
+				F3B816802A56655100EE3770 /* Condition.swift */,
+			);
+			path = If;
+			sourceTree = "<group>";
+		};
+		08CE97762A653CC100188F5F /* Variable */ = {
+			isa = PBXGroup;
+			children = (
+				F3AB36DD2A57D638008061F5 /* MyProperty.swift */,
+				F3B8167B2A56622400EE3770 /* Variable4.swift */,
+				F3B816792A565FC500EE3770 /* Variable3.swift */,
+				F3B816772A56578D00EE3770 /* Variable2.swift */,
+				F3B816752A5656DA00EE3770 /* Variable.swift */,
+			);
+			path = Variable;
+			sourceTree = "<group>";
+		};
 		F33A31C52A5FD98200B61324 /* Level4 */ = {
 			isa = PBXGroup;
 			children = (
+				F33A31CE2A5FFB4A00B61324 /* Generic.swift */,
 				F3A0283C2A5E842700615A84 /* AccessControlView.swift */,
 				F3A0283E2A5E904400615A84 /* ErrorHandling.swift */,
 				F33A31C32A5FD4F200B61324 /* Initializer.swift */,
@@ -155,23 +243,6 @@
 				F33A31CC2A5FF84D00B61324 /* TypeCasting.swift */,
 			);
 			name = Level4;
-			sourceTree = "<group>";
-		};
-		F3B7F6392A5BEAD4004B93A8 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				F3B7F6352A5BE57E004B93A8 /* MyDataModeling.swift */,
-				F3B7F6372A5BE7B6004B93A8 /* MyProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		F3B7F63C2A5BED3F004B93A8 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				F3B7F6332A5BE1CD004B93A8 /* MyExtension.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F3B8163F2A5654B300EE3770 = {
@@ -197,23 +268,23 @@
 		F3B8164A2A5654B300EE3770 /* SwiftWithSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				F33A31C52A5FD98200B61324 /* Level4 */,
-				F3B7F63C2A5BED3F004B93A8 /* Utilities */,
-				F3B7F6392A5BEAD4004B93A8 /* Protocols */,
-				F3B816D12A569E8900EE3770 /* Object */,
-				F3B816CE2A569A0A00EE3770 /* Enum */,
-				F3B816CD2A5699F500EE3770 /* Closure */,
-				F3B816CA2A568E3D00EE3770 /* Option */,
+				08CE97762A653CC100188F5F /* Variable */,
+				08CE97752A653C9700188F5F /* If */,
+				08CE97742A653C7A00188F5F /* Loop */,
+				08CE97722A653C1D00188F5F /* Option */,
 				F3B8168F2A567E7800EE3770 /* Function */,
-				F3B816882A56670A00EE3770 /* loop */,
-				F3B816822A56656000EE3770 /* if */,
-				F3B8167D2A56650000EE3770 /* Variable */,
+				08CE97702A653BD000188F5F /* Closure */,
+				08CE976F2A653B9E00188F5F /* Enum */,
+				08CE976E2A653B8200188F5F /* Object */,
+				08CE976D2A653B6600188F5F /* protocols */,
+				08CE976C2A653B4000188F5F /* utilities */,
+				F33A31C52A5FD98200B61324 /* Level4 */,
 				F3B8164B2A5654B300EE3770 /* SwiftWithSwiftUIApp.swift */,
 				F3B8164D2A5654B300EE3770 /* ContentView.swift */,
 				F3B8164F2A5654B400EE3770 /* Assets.xcassets */,
 				F3B816512A5654B400EE3770 /* Preview Content */,
 				F3B7F63D2A5BED59004B93A8 /* CheckPoint3.swift */,
-				F33A31CE2A5FFB4A00B61324 /* Generic.swift */,
+				F3AB36E32A57E141008061F5 /* CheckPoint.swift */,
 			);
 			path = SwiftWithSwiftUI;
 			sourceTree = "<group>";
@@ -243,36 +314,6 @@
 			path = SwiftWithSwiftUIUITests;
 			sourceTree = "<group>";
 		};
-		F3B8167D2A56650000EE3770 /* Variable */ = {
-			isa = PBXGroup;
-			children = (
-				F3AB36DD2A57D638008061F5 /* MyProperty.swift */,
-				F3B8167B2A56622400EE3770 /* Variable4.swift */,
-				F3B816792A565FC500EE3770 /* Variable3.swift */,
-				F3B816772A56578D00EE3770 /* Variable2.swift */,
-				F3B816752A5656DA00EE3770 /* Variable.swift */,
-			);
-			path = Variable;
-			sourceTree = "<group>";
-		};
-		F3B816822A56656000EE3770 /* if */ = {
-			isa = PBXGroup;
-			children = (
-				F3B816802A56655100EE3770 /* Condition.swift */,
-			);
-			path = if;
-			sourceTree = "<group>";
-		};
-		F3B816882A56670A00EE3770 /* loop */ = {
-			isa = PBXGroup;
-			children = (
-				F3B7F6312A5BDDA4004B93A8 /* MyHOFLoop.swift */,
-				F3B7F62F2A5BD883004B93A8 /* MyHOF.swift */,
-				F3B8168B2A56674500EE3770 /* Loop.swift */,
-			);
-			path = loop;
-			sourceTree = "<group>";
-		};
 		F3B8168F2A567E7800EE3770 /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,47 +321,6 @@
 				F3B8168D2A567C5400EE3770 /* MyFunction.swift */,
 			);
 			path = Function;
-			sourceTree = "<group>";
-		};
-		F3B816CA2A568E3D00EE3770 /* Option */ = {
-			isa = PBXGroup;
-			children = (
-				F3B816D42A56A70500EE3770 /* MyOptionalBinding.swift */,
-				F3AB36DB2A57D3D2008061F5 /* MyOptionalChaining.swift */,
-				F3B816C82A568BFD00EE3770 /* MyOptional.swift */,
-			);
-			path = Option;
-			sourceTree = "<group>";
-		};
-		F3B816CD2A5699F500EE3770 /* Closure */ = {
-			isa = PBXGroup;
-			children = (
-				F3B7F63A2A5BEAFA004B93A8 /* MyConcurrency.swift */,
-				F3B7F62D2A5BC060004B93A8 /* MyClosure4.swift */,
-				F3B7F62B2A5BB7DE004B93A8 /* MyClosure3.swift */,
-				F3B7F6292A5BB52B004B93A8 /* MyClosure2.swift */,
-				F3B816CB2A568E5700EE3770 /* MyClosure.swift */,
-			);
-			path = Closure;
-			sourceTree = "<group>";
-		};
-		F3B816CE2A569A0A00EE3770 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				F3AB36E32A57E141008061F5 /* CheckPoint.swift */,
-				F3AB36E12A57DC7F008061F5 /* MyEnumAfter.swift */,
-				F3B816902A567E9100EE3770 /* MyEnum.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
-		F3B816D12A569E8900EE3770 /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				F3B816D62A56A89D00EE3770 /* MyClass.swift */,
-				F3B816CF2A569A2900EE3770 /* MyStruct.swift */,
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
