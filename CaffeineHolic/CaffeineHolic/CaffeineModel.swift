@@ -7,17 +7,27 @@
 
 import Foundation
 
+enum CaffeineState: String {
+    case Intro
+    case Wakening
+    case Stressful
+    case Rest
+}
+
+struct dailyItem {
+    var state: CaffeineState = .Intro
+    var count: Int = 1
+}
+
 class CaffeineModel {
-    
-    enum CaffeineState: String {
-        case Intro
-        case Wakening
-        case Stressful
-        case Rest
-    }
     
     var currentState:CaffeineState = CaffeineState.Intro
     var imgFrame: CGSize = CGSize(width: 200, height: 200)
+
+    
+    let originList = ["First", "Second"]
+    var dailyList: [dailyItem] = []
+    
     
     func resetImgSize() {
         imgFrame = CGSize(width: 200, height: 200)
@@ -26,7 +36,9 @@ class CaffeineModel {
         var newFrame: CGSize = imgFrame
         newFrame.width += 10
         newFrame.height += 10
-        imgFrame = newFrame
+        if newFrame.height < 350 {
+            imgFrame = newFrame
+        }
     }
     
     func getStateImg() -> String {
@@ -42,24 +54,33 @@ class CaffeineModel {
 //            return "Profile.Rest"
 //        }
     }
+    func doReset() -> (Bool, [dailyItem]) {
+        if currentState == .Intro {
+            return (false, dailyList)
+        }
+        dailyList.removeAll()
+        return changeState(newState: .Intro)
+    }
     
-    func doWakening() {
+    func doWakening() -> (Bool, [dailyItem]) {
 //        self.currentState = CaffeineState.Wakening
-        changeState(newState: .Wakening)
+        return changeState(newState: .Wakening)
     }
     
-    func doStress() {
+    func doStress() -> (Bool, [dailyItem]) {
 //        self.currentState = CaffeineState.Stressful
-        changeState(newState: .Stressful)
+        return changeState(newState: .Stressful)
     }
     
-    func doRest() {
+    func doRest() -> (Bool, [dailyItem]) {
 //        self.currentState = CaffeineState.Rest
-        changeState(newState: .Rest)
+        return changeState(newState: .Rest)
     }
     
-    private func changeState(newState: CaffeineState) -> Bool {
+    private func changeState(newState: CaffeineState) -> (Bool, [dailyItem]) {
         var result: Bool = false
+        
+        addDailyList(state: newState)
         
         if newState != self.currentState {
             result = true
@@ -69,6 +90,36 @@ class CaffeineModel {
             incImgSize()
         }
         
-        return result
+        return (result, dailyList)
+    }
+    
+    private func addDailyList(state: CaffeineState) {
+        var daily: dailyItem = .init()
+        daily.state = state
+        daily.count = 1
+        
+        if dailyList.count == 0 {
+            dailyList.insert(daily, at: 0)
+        }
+        
+        var item = dailyList.removeFirst()
+        if item.state == state {
+            item.count += 1
+            dailyList.insert(item, at: 0)
+        } else {
+            dailyList.insert(item, at: 0)
+            dailyList.insert(daily, at: 0)
+        }
+        
+//        switch (state) {
+//        case .Stressful:
+//            dailyList.insert("Stress Up", at: 0)
+//        case .Wakening:
+//            dailyList.insert("Get Some Coffee", at: 0)
+//        case .Intro:
+//            dailyList.insert("New", at: 0)
+//        case .Rest:
+//            dailyList.insert("REST", at: 0)
+//        }
     }
 }
