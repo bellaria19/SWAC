@@ -214,13 +214,6 @@
 			name = If;
 			sourceTree = "<group>";
 		};
-		08CE977E2A654C3B00188F5F /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
-			sourceTree = "<group>";
-		};
 		08CE977F2A654C7D00188F5F /* Loop */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +287,6 @@
 				08CE97812A654CB400188F5F /* Option */,
 				08CE97802A654C8D00188F5F /* Variable */,
 				08CE977F2A654C7D00188F5F /* Loop */,
-				08CE977E2A654C3B00188F5F /* New Group1 */,
 				08CE977D2A654BC300188F5F /* If */,
 				08CE977A2A654A9C00188F5F /* Option */,
 				08CE97772A654A4400188F5F /* Function */,
