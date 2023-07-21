@@ -18,6 +18,8 @@
 		08E3D4332A69073D00300945 /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3D4322A69073D00300945 /* MyScrollView.swift */; };
 		08E3D43B2A690A1F00300945 /* MyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3D43A2A690A1F00300945 /* MyList.swift */; };
 		08E3D43E2A690DCD00300945 /* MySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3D43D2A690DCD00300945 /* MySection.swift */; };
+		08E3D4402A692ABF00300945 /* MySpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3D43F2A692ABF00300945 /* MySpacer.swift */; };
+		08E3D4422A692C2400300945 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E3D4412A692C2400300945 /* MyColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		08E3D4322A69073D00300945 /* MyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		08E3D43A2A690A1F00300945 /* MyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyList.swift; sourceTree = "<group>"; };
 		08E3D43D2A690DCD00300945 /* MySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySection.swift; sourceTree = "<group>"; };
+		08E3D43F2A692ABF00300945 /* MySpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpacer.swift; sourceTree = "<group>"; };
+		08E3D4412A692C2400300945 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				083288FB2A68FE31008BE004 /* ContentView.swift */,
 				083288FD2A68FE32008BE004 /* Assets.xcassets */,
 				083288FF2A68FE32008BE004 /* Preview Content */,
+				08E3D4412A692C2400300945 /* MyColor.swift */,
 			);
 			path = TodaySwiftUI;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				08E3D43A2A690A1F00300945 /* MyList.swift */,
 				08E3D43D2A690DCD00300945 /* MySection.swift */,
+				08E3D43F2A692ABF00300945 /* MySpacer.swift */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 				083288FC2A68FE31008BE004 /* ContentView.swift in Sources */,
 				08E3D43B2A690A1F00300945 /* MyList.swift in Sources */,
 				08E3D43E2A690DCD00300945 /* MySection.swift in Sources */,
+				08E3D4422A692C2400300945 /* MyColor.swift in Sources */,
+				08E3D4402A692ABF00300945 /* MySpacer.swift in Sources */,
 				083288FA2A68FE31008BE004 /* TodaySwiftUIApp.swift in Sources */,
 				08E3D4312A69071100300945 /* MyStacks.swift in Sources */,
 				08E3D42F2A69056D00300945 /* MyImage.swift in Sources */,
