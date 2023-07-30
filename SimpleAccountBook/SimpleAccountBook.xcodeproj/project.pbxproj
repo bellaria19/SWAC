@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08F573952A766C2E0064E8A1 /* AccountBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F573942A766C2E0064E8A1 /* AccountBookModel.swift */; };
+		08F573992A7676FC0064E8A1 /* InputAccountModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F573982A7676FC0064E8A1 /* InputAccountModal.swift */; };
 		F3D003692A612CD000FEE503 /* SimpleAccountBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D003682A612CD000FEE503 /* SimpleAccountBookApp.swift */; };
 		F3D0036B2A612CD000FEE503 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0036A2A612CD000FEE503 /* ContentView.swift */; };
 		F3D0036D2A612CD100FEE503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D0036C2A612CD100FEE503 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		08F573942A766C2E0064E8A1 /* AccountBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookModel.swift; sourceTree = "<group>"; };
+		08F573982A7676FC0064E8A1 /* InputAccountModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccountModal.swift; sourceTree = "<group>"; };
 		F3D003652A612CD000FEE503 /* SimpleAccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D003682A612CD000FEE503 /* SimpleAccountBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAccountBookApp.swift; sourceTree = "<group>"; };
 		F3D0036A2A612CD000FEE503 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F3D0036C2A612CD100FEE503 /* Assets.xcassets */,
 				F3D0036E2A612CD100FEE503 /* Preview Content */,
 				08F573942A766C2E0064E8A1 /* AccountBookModel.swift */,
+				08F573982A7676FC0064E8A1 /* InputAccountModal.swift */,
 			);
 			path = SimpleAccountBook;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F573992A7676FC0064E8A1 /* InputAccountModal.swift in Sources */,
 				F3D0036B2A612CD000FEE503 /* ContentView.swift in Sources */,
 				F3D003692A612CD000FEE503 /* SimpleAccountBookApp.swift in Sources */,
 				08F573952A766C2E0064E8A1 /* AccountBookModel.swift in Sources */,

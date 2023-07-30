@@ -74,15 +74,27 @@ struct AccountRow: View {
     }
 }
 
-struct TopArea:View {
+struct TopArea: View {
+    
+    @State private var isShowModal = false
+    
     var body: some View {
         HStack {
             Button {
-                
+                self.isShowModal = true
             } label: {
-                Text("Top Button")
+                Text("💸💸💸")
+                    .font(.system(size: 33.3))
+                    .frame(maxWidth: .infinity)
             }
-        }.padding()
+            .padding()
+            .sheet(isPresented: self.$isShowModal) {
+                InputAccountModal(isPresented: self.$isShowModal)
+            }
+        }
+        .background(.white)
+        .cornerRadius(20)
+        .padding()
     }
 }
 

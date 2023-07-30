@@ -20,6 +20,7 @@ enum AccountCategory: String {
         case .saving: return "💰"
         case .drink: return "☕️"
         case .food: return "🥘"
+        case .transport: return "🚘"
         default: return "💸"
         }
     }
@@ -29,6 +30,7 @@ enum AccountCategory: String {
         case .saving: return "저축"
         case .drink: return "커피/음료수"
         case .food: return "음식"
+        case .transport: return "여행"
         default: return "소비"
         }
     }
