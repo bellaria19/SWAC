@@ -11,10 +11,8 @@ struct MainScrollView: View {
     var body: some View {
         ScrollView() {
             VStack {
-                ForEach(1 ..< 100) { _ in
-                    AccountRow()
-//                    Text("item \($0)")
-//                        .font(.title)
+                ForEach(Array(DummyData.enumerated()), id: \.offset) { idx, data in
+                    AccountRow(accountData: data)
                 }
             }
             .padding()
@@ -29,6 +27,8 @@ struct MainScrollView: View {
 }
 
 struct AccountRow: View {
+    
+    var accountData: AccountData
     
     var buttonArea: some View {
         VStack {
@@ -49,7 +49,7 @@ struct AccountRow: View {
     var body: some View {
         HStack {
             // 로고
-            Text("🐶")
+            Text(accountData.category.DisplayImoji)
                 //.frame(width: 40, height: 40)
                 //.background(.secondary)
                 .font(.system(size:45))
@@ -57,12 +57,14 @@ struct AccountRow: View {
             //Spacer()
             // 타이틀 , 금액
             VStack {
-                Text("커피 / 음료수")
+                Text(accountData.title)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                Text("4,500원")
+                    
+                Text(accountData.account)
                     .font(.title3)
             }
+            .multilineTextAlignment(.leading)
 //            .background(.gray)
             Spacer()
             
