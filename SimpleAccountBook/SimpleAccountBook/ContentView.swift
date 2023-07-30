@@ -39,7 +39,8 @@ struct AccountRow: View {
                     .foregroundColor(.black)
             }
             .frame(width: 43, height: 33)
-            .background(Color("AccountAdd"))
+            .background(.quaternary)
+//            .background(Color("AccountAdd"))
             .cornerRadius(10)
         }
         .padding()
@@ -49,11 +50,11 @@ struct AccountRow: View {
         HStack {
             // 로고
             Text("🐶")
+                //.frame(width: 40, height: 40)
+                //.background(.secondary)
                 .font(.system(size:45))
                 .cornerRadius(0.3)
-                .frame(width: 40, height: 40)
-                .background(.secondary)
-            Spacer()
+            //Spacer()
             // 타이틀 , 금액
             VStack {
                 Text("커피 / 음료수")
@@ -62,7 +63,7 @@ struct AccountRow: View {
                 Text("4,500원")
                     .font(.title3)
             }
-            .background(.gray)
+//            .background(.gray)
             Spacer()
             
             // Button
