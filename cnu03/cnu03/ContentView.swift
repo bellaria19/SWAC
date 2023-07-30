@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             NavigationLink {
-                DetailView(name: myName, count: myCount)
+                DetailView(name: myName, count: $myCount)
             } label: {
                 Text("안녕하세요 \(myName) \(myCount)개")
             }
