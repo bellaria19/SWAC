@@ -29,6 +29,7 @@ struct MyList: View {
                 Text(person.name)
             }
         }
+        
 //        List {
 //            HStack {
 //                Image(systemName: "heart")

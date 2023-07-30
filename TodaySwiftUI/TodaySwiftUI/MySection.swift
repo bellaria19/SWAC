@@ -27,7 +27,7 @@ struct MySection: View {
 //                Text("A Class")
 //            } footer: {
 //                Text("Footer")
-//            }
+//            }qoqsddd
 
             Section {
                 HStack {
