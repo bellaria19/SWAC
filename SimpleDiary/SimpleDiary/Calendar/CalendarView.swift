@@ -46,6 +46,7 @@ struct CalendarView: View {
                     ForEach( 1 ..< 8) { column in
                         let count = column + (row * 7)
                         CalendarCell(count: count, startingSpaces: staringSpaces, daysInMonth: daysInMonth, daysInPrevMonth: daysInPrevMonth)
+                            .environmentObject(dateHolder)
                     }
                 }
             }
