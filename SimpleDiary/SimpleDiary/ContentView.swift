@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TopArea: View {
+    
     @State private var isShowModal = false
+    
     var body: some View {
         HStack {
             Button {
@@ -26,33 +28,6 @@ struct TopArea: View {
         .background(.white)
         .cornerRadius(20)
         .padding()
-    }
-}
-
-
-struct DiaryListRow: View {
-    
-    var diary: DiaryModel
-    
-    var body: some View {
-        HStack {
-            // 로고
-            Text("🐶")
-                .font(.system(size:45))
-                .cornerRadius(0.3)
-            Spacer()
-            // 타이틀 , 금액
-            VStack(alignment: .leading) {
-                Text(diary.keyDateString())
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                Text(diary.title)
-                    .font(.title3)
-            }
-
-            Spacer()
-            
-        }
     }
 }
 
@@ -74,6 +49,32 @@ struct ContentsArea: View {
         .background(.white)
         .cornerRadius(20)
         .padding()
+    }
+}
+
+struct DiaryListRow: View {
+    
+    var diary: DiaryModel
+    
+    var body: some View {
+        NavigationLink(destination: DiaryDetailView(diary: diary)) {
+            HStack {
+                // 로고
+                Text("🐶")
+                    .font(.system(size:45))
+                    .cornerRadius(0.3)
+                //Spacer()
+                // 타이틀 , 금액
+                VStack(alignment: .leading) {
+                    Text(diary.keyDateString())
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    Text(diary.title)
+                        .font(.title3)
+                }
+                Spacer()
+            }
+        }
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DiaryInputModal: View {
+    
     @Binding var isPresented: Bool
     @Environment(\.dismiss) private var dismiss
     
@@ -16,7 +17,7 @@ struct DiaryInputModal: View {
     @State var selectedWeather: DiaryWeatherItem = .sunny
     
     @State private var title: String = ""
-    @State private var state:Int = 3
+    @State private var state: Int = 3
     var range: ClosedRange<Int> = 1...5
     
     func addData() -> Bool {
@@ -56,6 +57,9 @@ struct DiaryInputModal: View {
                         .tag(weatherItem)
                 }
             }
+            .onChange(of: selectedWeather, perform: { newWeather in
+                
+            })
             .pickerStyle(SegmentedPickerStyle())
             
         }

@@ -61,12 +61,12 @@
 			children = (
 				08E3D44F2A6A693B00300945 /* SimpleDiaryApp.swift */,
 				08E3D4512A6A693B00300945 /* ContentView.swift */,
+				08E3D45D2A6A6A0F00300945 /* DiaryModel.swift */,
+				08E3D45F2A6A6C6800300945 /* DiaryDataManager.swift */,
+				08E3D4612A6A715400300945 /* DiaryInputModal.swift */,
+				08E3D4632A6A74F600300945 /* DiaryDetailView.swift */,
 				08E3D4532A6A693C00300945 /* Assets.xcassets */,
 				08E3D4552A6A693C00300945 /* Preview Content */,
-				08E3D45D2A6A6A0F00300945 /* DiaryModel.swift */,
-				08E3D4612A6A715400300945 /* DiaryInputModal.swift */,
-				08E3D45F2A6A6C6800300945 /* DiaryDataManager.swift */,
-				08E3D4632A6A74F600300945 /* DiaryDetailView.swift */,
 			);
 			path = SimpleDiary;
 			sourceTree = "<group>";
