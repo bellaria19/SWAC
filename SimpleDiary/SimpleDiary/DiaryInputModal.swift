@@ -44,8 +44,6 @@ struct DiaryInputModal: View {
                 Image(systemName: "checkmark.circle")
                     .imageScale(.large)
             }
-
-            
         }.padding()
     }
     
@@ -72,7 +70,7 @@ struct DiaryInputModal: View {
     }
     
     func getStateList() -> Array<String> {
-        return Array(repeating: "heart.square", count: state)
+        return Array(repeating: "star", count: state)
     }
     
     var StateStar: some View {
@@ -116,11 +114,13 @@ struct DiaryInputModal: View {
     
     var InputArea: some View {
         VStack {
-                StateStepper
-                PickerArea
-                TextField("...입력하기...", text: $title)
+            StateStepper
+            PickerArea
+            Text("")
+            TextField("오늘의 한 줄 일기...", text: $title, axis: .vertical)
                 .font(.largeTitle)
                 .multilineTextAlignment(.leading)
+            Spacer()
         }
         .padding()
     }

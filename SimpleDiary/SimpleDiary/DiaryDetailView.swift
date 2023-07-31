@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DiaryDetailView: View {
     
-    let diary: DiaryModel
+    @State var diary: DiaryModel
+    @State var isEditMode: Bool = false
+    @State var contents: String = ""
 
     func getImageName() -> String {
         if let weather = diary.weather {
@@ -38,8 +40,47 @@ struct DiaryDetailView: View {
                         .frame(height: geo.size.height * 0.67)
                 }
             }
+            
+            VStack {
+                Spacer()
+                bottomButtons
+            }
         }
         .edgesIgnoringSafeArea(.top)
+    }
+    
+    var bottomButtons: some View {
+        HStack {
+            Spacer()
+            Button {
+                if let content = diary.contents {
+                    self.contents = content
+                }
+                modechange()
+            } label: {
+                Label("취소", systemImage: "trash")
+                    .fontWeight(.semibold)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .cornerRadius(40)
+            }
+            Button {
+                diary.contents = self.contents
+                self.isEditMode = !DiaryDataManager.shared.saveDiary(Diary: self.diary)
+                self.contents = ""
+            } label: {
+                Label("수정완료", systemImage: "pencil.circle")
+                    .fontWeight(.semibold)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(40)
+            }
+        }
+        .opacity(1)
+//        .opacity(isEditMode ? 1 : 0)
+        .padding()
     }
     
     var diaryTitle: some View {
@@ -89,11 +130,23 @@ struct DiaryDetailView: View {
 
     var diaryDescription: some View {
         ScrollView {
-            Text(getDiaryContents())
-                .foregroundColor(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
+            if isEditMode == false {
+                Text(getDiaryContents())
+                    .foregroundColor(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                TextField("일기내용", text: $contents, axis: .vertical)
+            }
         }
     }
+    
+    func modechange() {
+        if let content = diary.contents {
+            self.contents = content
+        }
+        self.isEditMode.toggle()
+    }
+    
     var diaryContents: some View {
         GeometryReader {
             VStack(alignment: .leading) {
@@ -108,6 +161,9 @@ struct DiaryDetailView: View {
                 .background(Color.white)
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: -5)
+        }
+        .onTapGesture(count: 2) {
+            modechange()
         }
     }
 }
