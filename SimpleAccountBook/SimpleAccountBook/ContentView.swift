@@ -7,22 +7,39 @@
 
 import SwiftUI
 
+func numberFormat(price: String) -> String {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    if let intValue = Int(price) {
+        let num = NSNumber(value: intValue)
+        if let result = numberFormatter.string(from: num) {
+            return result
+        }
+    }
+    return price
+}
+
 struct MainScrollView: View {
+    
+    @StateObject var dataManager: AccountDataManager = AccountDataManager.shared
+    @State var acCategory: AccountCategory = .none
+    
     var body: some View {
         ScrollView() {
             VStack {
-                ForEach(Array(DummyData.enumerated()), id: \.offset) { idx, data in
+                ForEach(Array(dataManager.getList(Category: acCategory).enumerated()), id: \.offset) { idx, data in
                     AccountRow(accountData: data)
                 }
             }
             .padding()
             .frame(maxWidth: .infinity)
             .padding()
+        
         }
-        .frame(width: .infinity)
         .background(.white)
         .cornerRadius(20)
         .padding()
+        CategorySelectionArea(selectedCategory: $acCategory)
     }
 }
 
@@ -33,7 +50,7 @@ struct AccountRow: View {
     var buttonArea: some View {
         VStack {
             Button {
-                
+                // edit
             } label: {
                 Text("+")
                     .foregroundColor(.black)
@@ -56,15 +73,14 @@ struct AccountRow: View {
                 .cornerRadius(0.3)
             //Spacer()
             // 타이틀 , 금액
-            VStack {
+            VStack(alignment: .leading) {
                 Text(accountData.title)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     
-                Text(accountData.account)
+                Text(numberFormat(price: accountData.account) + "원")
                     .font(.title3)
             }
-            .multilineTextAlignment(.leading)
 //            .background(.gray)
             Spacer()
             
@@ -99,15 +115,39 @@ struct TopArea: View {
 }
 
 
-struct BottomArea:View {
+//struct BottomArea:View {
+//    var body: some View {
+//        HStack(){
+//            Button {
+//                
+//            } label: {
+//                Text("Bottom")
+//            }
+//        }
+//    }
+//}
+
+struct CategorySelectionArea: View {
+    
+    @Binding var selectedCategory: AccountCategory
+    
     var body: some View {
-        HStack(){
-            Button {
-                
-            } label: {
-                Text("Bottom")
+        VStack {
+            Picker("지출 종류를 골라주세요", selection: $selectedCategory) {
+                ForEach(AccountCategory.allCases, id: \.self) { category in
+                    Text(category.DisplayImoji)
+                        .tag(category)
+                }
             }
+            .onChange(of: selectedCategory, perform: { newValue in
+                
+            })
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
         }
+        .background(.white)
+        .cornerRadius(20)
+        .padding()
     }
 }
 struct ContentView: View {
@@ -124,7 +164,7 @@ struct ContentView: View {
                 Spacer()
                 
                 // Bottom Area
-                BottomArea()
+//                BottomArea()
                 
             }
             .padding()

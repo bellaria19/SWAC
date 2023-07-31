@@ -8,12 +8,14 @@
 // import Foundation
 import SwiftUI
 
-enum AccountCategory: String {
+enum AccountCategory: String, CaseIterable, Codable {
     case none
     case saving
     case drink
     case food
     case transport
+    
+    var id: AccountCategory { self }
     
     var DisplayImoji: String {
         switch self {
@@ -36,7 +38,7 @@ enum AccountCategory: String {
     }
 }
 
-class AccountData {
+struct AccountData: Codable {
     
     var category: AccountCategory = .none
     var title: String = ""
@@ -45,14 +47,11 @@ class AccountData {
     
     init(category: AccountCategory, title: String, account: String) {
         self.category = category
-        self.title = title
+        self.title = (title == "" ? category.Display : title)
         self.account = account
     }
-    init() {}
+
 }
 
-let DummyData: [AccountData] = [
-    AccountData(category: .food, title: "저녁", account: "30,000"),
-    AccountData(category: .saving, title: "2023 1월 첫 저축", account: "100,000")
-]
+
 

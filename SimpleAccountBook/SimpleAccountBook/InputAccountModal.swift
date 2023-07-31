@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct InputAccountModal: View {
+    
+    var dataManager: AccountDataManager = AccountDataManager.shared
     // Using State & Binding Model
     @Binding var isPresented: Bool
     // Using dismiss functions
     @Environment(\.dismiss) private var dismiss
     
     @State private var money: String = ""
+    @State private var memo: String = ""
     
-    var body: some View {
-        VStack(alignment: .leading) {
-            TopButton
-            InputArea
-            Spacer()
-        }
-        .padding()
-    }
+    @State private var selectedCategory: AccountCategory = .none
+    
+    
+    
     
     var TopButton: some View {
         HStack {
@@ -43,7 +42,8 @@ struct InputAccountModal: View {
                     .font(.title)
                 Spacer()
                 Button {
-                    
+                    let result = addAccountData()
+                    isPresented = result
                 } label: {
                     Image(systemName: "arrow.up")
                         .imageScale(.large)
@@ -58,14 +58,43 @@ struct InputAccountModal: View {
             TextField("금액 입력", text: $money)
                 .keyboardType(.decimalPad)
                 .font(.title)
+            Text("")
+            //Spacer()
+            TextField("메모 입력", text: $memo)
+                .font(.title)
+            Text("")
+            
+            Picker("지출 종류를 골라주세요", selection: $selectedCategory) {
+                ForEach(AccountCategory.allCases, id: \.self) { category in
+                    Text(category.DisplayImoji)
+                        .tag(category)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            Text("")
+            HStack {
+                Text("오늘은")
+                Spacer()
+            }
+            Text(selectedCategory.Display)
+                .font(.title)
             Spacer()
         }
         .padding()
     }
-}
-
-struct InputAccountModal_Previews: PreviewProvider {
-    static var previews: some View {
-        InputAccountModal(isPresented: .constant(true))
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            TopButton
+            InputArea
+            Spacer()
+        }
+        .padding()
+    }
+    
+    func addAccountData() -> Bool {
+        let acData = AccountData(category: selectedCategory, title: memo, account: money)
+        let result = dataManager.add(AccounData: acData)
+        return !result
     }
 }
