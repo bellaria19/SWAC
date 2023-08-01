@@ -95,10 +95,10 @@
 		08F5739E2A77B4260064E8A1 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				08F573AB2A77B5CD0064E8A1 /* DateScrollerView.swift */,
 				08F573A52A77B5430064E8A1 /* DateHolder.swift */,
 				08F573A62A77B5430064E8A1 /* MonthStruct.swift */,
 				08F573A12A77B5270064E8A1 /* CalendarHelper.swift */,
+				08F573AB2A77B5CD0064E8A1 /* DateScrollerView.swift */,
 				08F573A42A77B5430064E8A1 /* CalendarCell.swift */,
 				08F5739F2A77B4F60064E8A1 /* CalendarView.swift */,
 			);

@@ -31,6 +31,34 @@ struct TopArea: View {
     }
 }
 
+struct DiaryListRow: View {
+    
+    var diary: DiaryModel
+    
+    var body: some View {
+        NavigationLink {
+            DiaryDetailView(diary: diary)
+        } label: {
+            HStack {
+                // 로고
+                Text("🐶")
+                    .font(.system(size:45))
+                    .cornerRadius(0.3)
+                //Spacer()
+                // 타이틀 , 금액
+                VStack(alignment: .leading) {
+                    Text(diary.keyDateString())
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    Text(diary.title)
+                        .font(.title3)
+                }
+                Spacer()
+            }
+        }
+    }
+}
+
 struct ContentsArea: View {
     
     @StateObject var dataManger: DiaryDataManager = DiaryDataManager.shared
@@ -52,42 +80,19 @@ struct ContentsArea: View {
     }
 }
 
-struct DiaryListRow: View {
-    
-    var diary: DiaryModel
-    
-    var body: some View {
-        NavigationLink(destination: DiaryDetailView(diary: diary)) {
-            HStack {
-                // 로고
-                Text("🐶")
-                    .font(.system(size:45))
-                    .cornerRadius(0.3)
-                //Spacer()
-                // 타이틀 , 금액
-                VStack(alignment: .leading) {
-                    Text(diary.keyDateString())
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    Text(diary.title)
-                        .font(.title3)
-                }
-                Spacer()
-            }
-        }
-    }
-}
-
 struct ContentView: View {
     var body: some View {
         ZStack {
             Color.gray.ignoresSafeArea()
                 .opacity(0.2)
             VStack {
-                // Area1 topbutton
-                TopArea()
-                // Area2 Scrollarea
+                CalendarView()
+                    .environmentObject(DateHolder())
+                    .padding()
+                
+                
                 ContentsArea()
+                TopArea()
             }
             .padding()
         }
