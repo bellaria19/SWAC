@@ -1,14 +1,14 @@
 //
-//  cnu04App.swift
-//  cnu04
+//  SimpleWeatherAppApp.swift
+//  SimpleWeatherApp
 //
-//  Created by 이현재 on 2023/07/25.
+//  Created by 이현재 on 2023/08/02.
 //
 
 import SwiftUI
 
 @main
-struct cnu04App: App {
+struct SimpleWeatherAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
