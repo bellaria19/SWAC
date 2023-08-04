@@ -81,6 +81,7 @@ struct ContentsArea: View {
 }
 
 struct ContentView: View {
+    
     var body: some View {
         ZStack {
             Color.gray.ignoresSafeArea()

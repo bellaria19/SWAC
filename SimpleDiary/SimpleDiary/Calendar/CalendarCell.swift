@@ -35,10 +35,11 @@ struct CalendarCell: View {
             Rectangle()
                 .opacity(getKeyDate() == manager.today ? 0.1 : 0.0)
             Circle()
-                .opacity(getKeyDate() == manager.keyDate ? 0.1 : 0.0)
+                .opacity(getKeyDate() == manager.strKeyDate ? 0.1 : 0.0)
         }
         .onTapGesture {
-            manager.keyDate = getKeyDate()
+            let keyDate = getKeyDate()
+            manager.strKeyDate = keyDate
         }
     }
     
