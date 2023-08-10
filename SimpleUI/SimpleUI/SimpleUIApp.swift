@@ -11,7 +11,8 @@ import SwiftUI
 struct SimpleUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            FeedView()
         }
     }
 }
