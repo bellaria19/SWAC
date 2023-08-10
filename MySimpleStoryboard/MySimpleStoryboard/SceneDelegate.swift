@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  MyStoryboard
+//  MySimpleStoryboard
 //
-//  Created by 이현재 on 2023/08/08.
+//  Created by 이현재 on 2023/08/10.
 //
 
 import UIKit
