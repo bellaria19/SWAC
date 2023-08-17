@@ -7,11 +7,21 @@
 
 import Foundation
 
-struct TodoItem {
+struct TodoItem: Identifiable {
+    var id: String = UUID().uuidString
     var title: String
     var dueDate: Date
     var memo: String? = nil
     var isComplete: Bool = false
+}
+
+extension [TodoItem] {
+    func indexOfTodoItem(withId id: TodoItem.ID) -> Self.Index {
+        guard let index = firstIndex(where: { $0.id == id }) else {
+            fatalError()
+        }
+        return index
+    }
 }
 
 extension TodoItem {

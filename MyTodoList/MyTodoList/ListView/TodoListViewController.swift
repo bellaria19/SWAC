@@ -12,6 +12,7 @@ private let reuseIdentifier = "Cell"
 class TodoListViewController: UICollectionViewController {
     
     var dataSource: DataSource!
+    var todoList: [TodoItem] = TodoItem.dummyData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +22,12 @@ class TodoListViewController: UICollectionViewController {
         
         let cellRegistration = UICollectionView.CellRegistration(handler: CellRegistrationHandler)
         
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: TodoItem.ID) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         })
         
         
-        var snapshot = Snapshot()
-        snapshot.appendSections([0])
-        var reminderTitles = [String]()
-        for reminder in TodoItem.dummyData {
-            reminderTitles.append(reminder.title)
-        }
-        snapshot.appendItems(reminderTitles)
-        dataSource.apply(snapshot)
+        updateSnapshot()
         
         collectionView.dataSource = dataSource
     }
