@@ -10,11 +10,3 @@ import UIKit
 class DoneButton: UIButton {
     var id: TodoItem.ID?
 }
-
-extension TodoListViewController {
-    @objc func didTapDoneButton(_ sender: DoneButton) {
-        guard let id = sender.id else { return }
-        completeTodoList(withId: id)
-    }
-}
-

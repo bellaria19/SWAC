@@ -7,20 +7,27 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class TodoDetailViewController: UICollectionViewController {
-    
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Row>
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Row>
     
-    var todoItem: TodoItem
+    var todoItem: TodoItem {
+        didSet {
+            onChange(todoItem)
+        }
+    }
+    var draftTodoItem: TodoItem
+    var isAddingNewTodoItem = false
+    var onChange: (TodoItem) -> Void
     private var dataSource: DataSource!
     
-    init(todoItem: TodoItem) {
+    init(todoItem: TodoItem, onChange: @escaping (TodoItem) -> Void) {
         self.todoItem = todoItem
+        self.draftTodoItem = todoItem
+        self.onChange = onChange
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
+        listConfiguration.headerMode = .firstItemInSection
         let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
         super.init(collectionViewLayout: listLayout)
     }
@@ -32,11 +39,16 @@ class TodoDetailViewController: UICollectionViewController {
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
         let section = section(for: indexPath)
         switch (section, row) {
+        case (_, .header(let title)):
+            cell.contentConfiguration = headerConfiguration(fow: cell, with: title)
         case (.view, _):
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = text(for: row)
-            contentConfiguration.image = row.image
-            cell.contentConfiguration = contentConfiguration
+            cell.contentConfiguration = defaultConfiguration(for: cell, at: row)
+        case (.title, .editableText(let title)):
+            cell.contentConfiguration = titleConfiguration(for: cell, with: title)
+        case (.date, .editableDate(let date)):
+            cell.contentConfiguration = dateConfiguration(for: cell, with: date)
+        case (.memo, .editableText(let memo)):
+            cell.contentConfiguration = memoConfiguration(for: cell, with: memo)
         default: fatalError("no section and row")
         }
     }
@@ -47,49 +59,58 @@ class TodoDetailViewController: UICollectionViewController {
         dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         })
-        
         navigationItem.rightBarButtonItem = editButtonItem
-        
         updateSnapshot()
-            
-//        collectionView.dataSource = dataSource
     }
     
-    func pushDetailViewForTodoItem(withId id: TodoItem.ID) {
-        let todoItem = todoList(withId: id)
-        let viewController = TodoDetailViewController(todoItem: todoItem)
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        let id = todoList[indexPath.item].id
-        pushDetailViewForTodoItem(withId: id)
-        return false
-    }
-    
-    func text(for row: Row) -> String? {
-        switch row {
-        case .date:
-            return todoItem.dueDate.dayAndTimeText
-        case .memo:
-            return todoItem.memo
-        case .time:
-            return todoItem.dueDate.formatted(date: .omitted, time: .shortened)
-        case .title:
-            return todoItem.title
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+//        switch (){
+//        case .editing:
+//        case .adding:
+//        case .viewing:
+        if editing {
+            prepareForEditing()
+        } else {
+            if isAddingNewTodoItem {
+                onChange(draftTodoItem)
+            } else {
+                prepareForViewing()
+            }
         }
+    }
+    
+    @objc func didCancelEdit() {
+        draftTodoItem = todoItem
+        setEditing(false, animated: true)
+    }
+    
+    private func prepareForEditing() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didCancelEdit))
+        updateSnapshotForEditing()
     }
     
     private func updateSnapshotForEditing() {
         var snapshot = Snapshot()
         snapshot.appendSections([.title, .date, .memo])
+        snapshot.appendItems([.header(Section.title.name), .editableText(todoItem.title)], toSection: .title)
+        snapshot.appendItems([.header(Section.date.name), .editableDate(todoItem.dueDate)], toSection: .date)
+        snapshot.appendItems([.header(Section.memo.name), .editableText(todoItem.memo)], toSection: .memo)
         dataSource.apply(snapshot)
+    }
+    
+    private func prepareForViewing() {
+        navigationItem.leftBarButtonItem = nil
+        if draftTodoItem != todoItem {
+            todoItem = draftTodoItem
+        }
+        updateSnapshot()
     }
     
     private func updateSnapshot() {
         var snapshot = Snapshot()
         snapshot.appendSections([.view])
-        snapshot.appendItems([Row.title, Row.date, Row.time, Row.memo], toSection: .view)
+        snapshot.appendItems([Row.header(""), Row.title, Row.date, Row.time, Row.memo], toSection: .view)
         dataSource.apply(snapshot)
     }
     
@@ -98,36 +119,8 @@ class TodoDetailViewController: UICollectionViewController {
         guard let section = Section(rawValue: sectionNumber) else {
             fatalError("no matching section!")
         }
+        return section
     }
 }
 
-extension TodoDetailViewController {
-    enum Row: Hashable {
-        case date
-        case memo
-        case time
-        case title
-        
-        var imageName: String? {
-            switch self {
-            case .date: return "calendar.circle"
-            case .memo: return "square.and.pencil"
-            case .time: return "clock"
-            default: return nil
-            }
-        }
-        
-        var image: UIImage? {
-            guard let imageName else { return nil }
-            let configuration = UIImage.SymbolConfiguration(textStyle: .headline)
-            return UIImage(systemName: imageName, withConfiguration: configuration)
-        }
-        
-        var textStyle: UIFont.TextStyle {
-            switch self {
-            case .title: return .headline
-            default: return .subheadline
-            }
-        }
-    }
-}
+

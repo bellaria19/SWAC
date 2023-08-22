@@ -14,7 +14,6 @@ extension TodoDetailViewController {
         case date
         case memo
         
-        
         var name: String {
             switch self {
             case .view:
@@ -25,7 +24,6 @@ extension TodoDetailViewController {
                 return NSLocalizedString("Date", comment: "날짜 섹션")
             case .memo:
                 return NSLocalizedString("Memo", comment: "메모 섹션")
-                
             }
         }
     }

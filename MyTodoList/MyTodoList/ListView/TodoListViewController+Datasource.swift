@@ -8,7 +8,6 @@
 import UIKit
 
 extension TodoListViewController {
-    
     typealias DataSource = UICollectionViewDiffableDataSource<Int, TodoItem.ID>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, TodoItem.ID>
     
@@ -39,7 +38,6 @@ extension TodoListViewController {
             .customView(configuration: doneButtonConfiguration),
             .disclosureIndicator(displayed: .always)
         ]
-        
         cell.contentConfiguration = contentConfiguration
     }
     
@@ -61,7 +59,6 @@ extension TodoListViewController {
     }
     
     private func doneButtonConfiguation(for todoitem: TodoItem) -> UICellAccessory.CustomViewConfiguration {
-        
         let symbolName = todoitem.isComplete ? "checkmark.circle.fill" : "circle.fill"
         let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
         let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
